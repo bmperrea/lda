@@ -8,7 +8,7 @@ var seed = 123;
 var isOk = true;
 var results = [];
 for (var i = 0; i < 10; i++) {
-    results.push(lda(documents, 3, 6, null, null, null, 123));
+    results.push(lda(documents, 3, 6, null, null, null, 123).topics);
 }
 
 // Compare each result in the set to ensure matching terms and probability values.
@@ -29,7 +29,7 @@ for (var i in results) {
                 var row2 = result2[j];
                 var term2 = row2[k];
 
-                //console.log(term1.term + ' (' + term1.probability + ') ' + term2.term + ' (' + term2.probability + ')'); 
+                //console.log(term1.term + ' (' + term1.probability + ') ' + term2.term + ' (' + term2.probability + ')');
 
                 if (term1.term != term2.term || term1.probability != term2.probability) {
                     console.log('Failed match! Term ' + term1.term + ' (' + term1.probability + ') != ' + term2.term + ' (' + term2.probability + ')');

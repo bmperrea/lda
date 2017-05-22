@@ -1,6 +1,8 @@
 ﻿LDA
 --------
 
+A slight variation of [this node package](https://github.com/primaryobjects/lda/) that exports the theta values indicating which input sentences go along with which topics, as was demonstrated [here](https://github.com/awaisathar/lda.js).
+
 Latent Dirichlet allocation (LDA) topic modeling in javascript for node.js.
 LDA is a machine learning algorithm that extracts topics and their related keywords from a collection of documents.
 
@@ -69,20 +71,20 @@ var result = lda(documents, 2, 5);
 for (var i in result) {
 	var row = result[i];
 	console.log('Topic ' + (parseInt(i) + 1));
-	
+
 	// For each term.
 	for (var j in row) {
 		var term = row[j];
 		console.log(term.term + ' (' + term.probability + '%)');
 	}
-	
+
 	console.log('');
 }
 ```
 
 ## Additional Languages
 
-LDA uses [stop-words](https://en.wikipedia.org/wiki/Stop_words) to ignore common terms in the text (for example: this, that, it, we). By default, the stop-words list uses English. To use additional languages, you can specify an array of language ids, as follows: 
+LDA uses [stop-words](https://en.wikipedia.org/wiki/Stop_words) to ignore common terms in the text (for example: this, that, it, we). By default, the stop-words list uses English. To use additional languages, you can specify an array of language ids, as follows:
 
 ```javascript
 // Use English (this is the default).
